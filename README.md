@@ -1,0 +1,2 @@
+# whatsup
+skip bad days

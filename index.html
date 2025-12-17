@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>You Are Legendary</title>
+
+<style>
+body {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+p {
+  font-size: 22px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#praiseBox {
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffeb3b;
+}
+</style>
+</head>
+
+<body>
+
+<h1>✨ Welcome, Legend ✨</h1>
+
+<p id="introText">Before we begin… what is your name?</p>
+
+<input id="nameInput" placeholder="Type your name here" />
+<br><br>
+
+<button onclick="start()">Start ✨</button>
+<button onclick="praiseMe()">Praise Me 💖</button>
+<button onclick="openWindow()">Open Surprise 🚀</button>
+
+<div id="praiseBox"></div>
+
+<!-- AUDIO -->
+<audio id="sound">
+  <source src="https://www.soundjay.com/human/sounds/applause-01.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let userName = "";
+
+let praises = [
+  "you are absolutely amazing 🔥",
+  "you have unstoppable energy 🚀",
+  "the world is lucky to have you 🌍",
+  "you are built for greatness 💪",
+  "you are becoming legendary 😎",
+  "your effort will pay off 💯",
+  "your mindset is powerful 🧠",
+  "you are doing better than you think ❤️"
+];
+
+function start() {
+  userName = document.getElementById("nameInput").value;
+
+  if (userName === "") {
+    alert("Please enter your name first 😊");
+    return;
+  }
+
+  document.getElementById("introText").innerText =
+    "Alright " + userName + ", let's do this 😈";
+
+  document.getElementById("praiseBox").innerText =
+    userName + ", you are already winning just by starting.";
+
+  document.getElementById("sound").play();
+}
+
+function praiseMe() {
+  if (userName === "") {
+    alert("Enter your name first 😄");
+    return;
+  }
+
+  let random = Math.floor(Math.random() * praises.length);
+  document.getElementById("praiseBox").innerText =
+    userName + ", " + praises[random];
+
+  document.getElementById("sound").play();
+}
+
+function openWindow() {
+  window.open(
+    "https://www.google.com/search?q=you+are+legendary",
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>
